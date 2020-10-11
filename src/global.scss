@@ -1,0 +1,15 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
