@@ -1,0 +1,85 @@
+@import '../../common/styles/variables.scss';
+
+$search-with: 410px;
+
+.pili-header-search {
+  top: 38px !important;
+  width: $search-with;
+  .ant-popover-inner-content {
+    padding: 12px 0;
+  }
+  .ant-popover-arrow {
+    display: none;
+  }
+  &.hide {
+    display: none;
+  }
+  .search-history-item {
+    padding: 0 16px;
+    cursor: pointer;
+    height: 28px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    &:hover {
+      background-color: $color-second;
+      color: white;
+    }
+  }
+}
+
+.bar-wrapper {
+  height: 56px;
+  color: white;
+  padding: 10px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  i.icon-bilibili {
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+  .bar-navs {
+    display: flex;
+    align-items: center;
+    .nav-item {
+      font-size: 14px;
+      margin-left: 12px;
+    }
+  }
+  .bar-search-wrapper {
+    width: $search-with;
+    i.icon-search {
+      cursor: pointer;
+    }
+  }
+  .bar-mine {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .mine-item {
+      font-size: 14px;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+    Button {
+      width: 100px;
+      height: 36px;
+    }
+  }
+  &.main {
+    position: absolute;
+  }
+  &.sub {
+    color: #505050;
+    a {
+      color: #505050;
+    }
+    i.icon-bilibili {
+      color: $color-primary;
+    }
+  }
+}

@@ -15,12 +15,40 @@ const Router = routerRedux.ConnectedRouter;
 const routes = [
   {
     path: '/',
-    component: require('../../layouts/index').default,
+    component: require('../../layouts/index.tsx').default,
     routes: [
       {
         path: '/',
-        component: require('../index').default,
         exact: true,
+        component: require('../index.tsx').default,
+        _title: 'pili-web-app-umi',
+        _title_default: 'pili-web-app-umi',
+      },
+      {
+        path: '/passport',
+        exact: true,
+        component: require('../passport/index.tsx').default,
+        _title: 'pili-web-app-umi',
+        _title_default: 'pili-web-app-umi',
+      },
+      {
+        path: '/passport/login',
+        exact: true,
+        component: require('../passport/login/index.tsx').default,
+        _title: 'pili-web-app-umi',
+        _title_default: 'pili-web-app-umi',
+      },
+      {
+        path: '/passport/register',
+        exact: true,
+        component: require('../passport/register/index.tsx').default,
+        _title: 'pili-web-app-umi',
+        _title_default: 'pili-web-app-umi',
+      },
+      {
+        path: '/search',
+        exact: true,
+        component: require('../search/index.tsx').default,
         _title: 'pili-web-app-umi',
         _title_default: 'pili-web-app-umi',
       },
@@ -29,7 +57,7 @@ const routes = [
           React.createElement(
             require('/Users/jianyuwang/Desktop/dev/pili-repo/pilipili-web-app/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
-            { pagesPath: 'src/pages', hasRoutesInConfig: true },
+            { pagesPath: 'src/pages', hasRoutesInConfig: false },
           ),
         _title: 'pili-web-app-umi',
         _title_default: 'pili-web-app-umi',
@@ -43,7 +71,7 @@ const routes = [
       React.createElement(
         require('/Users/jianyuwang/Desktop/dev/pili-repo/pilipili-web-app/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
-        { pagesPath: 'src/pages', hasRoutesInConfig: true },
+        { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),
     _title: 'pili-web-app-umi',
     _title_default: 'pili-web-app-umi',

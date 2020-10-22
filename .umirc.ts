@@ -1,8 +1,11 @@
 import { IConfig } from 'umi-types';
 
 const theme = {
-  'primary-color': '#fb7299',
-  'border-radius-base': '2px'
+  'primary-color': '#00a0d8',
+  'error-color': '#f45d90',
+  'border-radius-base': '2px',
+  'outline-width': '0'
+
 };
 // ref: https://umijs.org/config/
 const config: IConfig =  {
@@ -21,15 +24,6 @@ const config: IConfig =  {
   cssLoaderOptions: {
     localIdentName: '[local]'
   },
-  routes: [
-    {
-      path: '/',
-      component: '../layouts/index',
-      routes: [
-        { path: '/', component: '../pages/index' }
-      ]
-    }
-  ],
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {

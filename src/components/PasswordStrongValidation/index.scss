@@ -1,0 +1,32 @@
+@import '../../common/styles/variables.scss';
+
+.strong-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: -40px;
+  height: 40px;
+  margin-left: 280px;
+  .title {
+    line-height: 20px;
+    font-weight: 700;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  .level-block {
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 10px;
+    &.week {
+      background-color: red;
+    }
+    &.middle {
+      background-color: #ff7f00;
+    }
+    &.strong {
+      background-color: #49c519;
+    }
+  }
+}

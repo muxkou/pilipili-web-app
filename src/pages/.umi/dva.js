@@ -20,7 +20,7 @@ export function _onCreate() {
     app.use(plugin);
   });
   
-  
+  app.model({ namespace: 'user.model', ...(require('/Users/jianyuwang/Desktop/dev/pili-repo/pilipili-web-app/src/models/user.model.ts').default) });
   return app;
 }
 

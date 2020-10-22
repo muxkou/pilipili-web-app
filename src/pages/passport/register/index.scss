@@ -1,0 +1,102 @@
+@import '../../../common/styles/variables.scss';
+.register-contry-selector {
+  width: 130px !important;
+  border-radius: 8px;
+    margin-top: 30px;
+}
+.pili-register-wrapper {
+  .title-line {
+    width: 980px;
+    height: 28px;
+    margin: 0 auto;
+    border-bottom: 1px solid $color-border;
+    margin-bottom: 28px;
+    text-align: center;
+    .title {
+      font-size: 38px;
+      height: 56px;
+      line-height: 56px;
+      margin: 0 auto;
+      padding: 0 20px;
+      background: #fff;
+      text-align: center;
+      color: black;
+    }
+  }
+  .register-box {
+    width: 980px;
+    height: 28px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 0;
+    input {
+      width: 420px;
+      height: 40px;
+    }
+    .ant-row {
+      margin-bottom: 40px;
+    }
+    .ant-input-affix-wrapper.ant-input-password {
+      height: 40px;
+      width: 420px;
+      input {
+        height: unset;
+        width: 100%;
+      }
+    }
+    .ant-input-wrapper.ant-input-group {
+      input {
+        width: 290px;
+      }
+      .ant-select-selector {
+        border: 0;
+      }
+      .ant-input-group-addon {
+        background-color: white;
+      }
+      .ant-input-group-addon {
+        width: 130px;
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 0;
+        .ant-select {
+          width: 100%;
+        }
+        .ant-select-arrow {
+          right: 0;
+        }
+        .ant-select-selection-item {
+          color: #c6c6c6;
+        }
+      }
+    }
+    .ant-col.ant-form-item-control {
+      display: flex;
+      flex-direction: row;
+      margin-left: 280px;
+      align-items: center;
+      div[role='alert'] {
+        margin-left: 20px;
+        color: #f45d90;
+        font-size: 12px;
+      }
+    }
+    .code-wrapper {
+      display: flex;
+      align-items: center;
+      button {
+        height: 36px;
+        width: 130px;
+        margin-left: -132px;
+        border-radius: 4px;
+      }
+    }
+    .submit-wrapper {
+      button {
+        width: 420px;
+        height: 40px;
+        border-radius: 4px;
+      }
+    }
+  }
+}

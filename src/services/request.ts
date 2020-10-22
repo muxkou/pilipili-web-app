@@ -56,7 +56,7 @@ export async function request(apiPath: string, params?: RequestParams, optionsSo
   return axios(sendData)
     .then((res: any) => {
       const data: any = res.data
-      if (!checkStatus || res.status === 200) {
+      if (!checkStatus || (res.status >= 200 && res.status < 300)) {
         return data
       } else {
         return Promise.reject(data)
