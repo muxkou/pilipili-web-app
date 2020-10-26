@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 import path from 'path'
 // import { errorAction } from './handle-response'
+import { EStorageKey, local } from '@/common/utils/storage.util';
 
 axios.defaults.withCredentials = true
 
@@ -29,8 +30,13 @@ const DEFAULT_PARAMS = {}
  */
 export async function request(apiPath: string, params?: RequestParams, optionsSource?: RequestOptions) {
   const options: RequestOptions = Object.assign({}, DEFAULT_CONFIG, optionsSource)
-  const { method, host, baseUrl, headers, responseType, checkStatus, formData } = options
+  const { method, host, baseUrl, headers: customHeaders, responseType, checkStatus, formData } = options
 
+  let headers = customHeaders || {};
+  const authorization = local.get(EStorageKey.Authorization);
+  if (authorization) {
+    headers.Authorization = 'Bearer ' + authorization;
+  }
   const apiPathWithVersion = apiPath ? `/api/v1${apiPath}` : undefined
   const sendData: AxiosRequestConfig = {
     url: `${path.join(host || '', baseUrl || '', apiPathWithVersion || '')}`,

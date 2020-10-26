@@ -3,16 +3,29 @@ import './index.scss';
 // import _ from 'lodash';
 import Navigation from '../navigation/index';
 import { useHistory } from 'dva';
+import { connect } from 'dva'
+import { IGloablStore } from '@/common/interfaces/store.interface';
+
 
 const _sub_header_path = [
   'passport'
 ]
 
-const Header: React.FC = () => {
-  
+connect(() => ({}))
+const Header: React.FC<any> = (props: any) => {
+
+  const { dispatch } = props;
   const history = useHistory();
   const isHome = history.location.pathname === '/';
   const isSubHeader = _sub_header_path.findIndex(path => history.location.pathname.includes(path)) >= 0;
+
+  React.useEffect(() => {
+    const authUser = () => {
+      dispatch({ type: 'user/profile' });
+    };
+    authUser();
+  }, []);
+  // dispatch
 
   return (
     <div className={`pili-header ${isHome ? 'home' : ''}`}>
@@ -33,4 +46,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default connect(() => { return {} })(Header);

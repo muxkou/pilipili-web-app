@@ -1,0 +1,132 @@
+@import '../../../common/styles/variables.scss';
+
+.pili-login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .login-box {
+    width: 980px;
+    display: flex;
+    .section {
+      width: calc(100% - 0.5px);
+      padding: 0;
+      &.line {
+        width: 1px;
+        background-color: $color-border;
+        height: 300px;
+        margin-top: 28px;
+        padding: 0;
+      }
+      &.left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .tv-wrapper {
+        width: 140px;
+        height: 56px;
+        i:before {
+          font-size: 48px;
+        }
+      }
+      .qr-wrapper {
+        img {
+          width: 140px;
+          height: 140px;
+        }
+      }
+      .qr-footer-wrapper {
+        width: 480px;
+        height: 155px;
+        background-image: url('http://localhost:8081/resouces/pili/qr_bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: center;
+        .status-txt {
+          padding-top: 20px;
+          text-align: center;
+          color: #222;
+          font-size: 18px;
+          letter-spacing: 3px;
+          margin-bottom: 5px;
+        } 
+        .app-link {
+          text-align: center;
+          color: #717171;
+          font-size: 14px;
+          a {
+            color: #28a7d8;
+          }
+        }
+      }
+      &.right {
+        padding-left: 45px;
+      }
+      .login-form {
+        margin-top: 50px;
+        width: 414px;
+
+        div[role='alert'] {
+          // margin-left: 20px;
+          color: #f45d90;
+          line-height: 20px;
+          font-size: 12px;
+        }
+        .tabs-wrapper {
+          height: 20px;
+          font-size: 14px;
+          display: flex;
+          .tab {
+            margin-right: 20px;
+            cursor: pointer;
+            &.current {
+              color: #28a7d8
+            }
+          }
+        }
+        .form-wrapper {
+          margin-top: 12px;
+          input {
+            height: 40px;
+          }
+          .code-wrapper {
+            display: flex;
+            align-items: center;
+            button {
+              height: 36px;
+              width: 130px;
+              margin-left: -132px;
+              border-radius: 4px;
+            }
+          }
+        }
+        .operation-wrapper {
+          margin-top: 32px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          height: 17px;
+          align-items: center;
+          .remember-text {
+            margin-left: 8px;
+            color: #717171;
+            font-size: 12px;
+          }
+          .suggestion {
+            margin-left: 10px;
+            color: #bbb;
+            font-size: 12px;
+          }
+        }
+        .login-buttons-wrapper {
+          display: flex;
+          justify-content: space-between;
+          button {
+            width: 186px;
+            height: 38px;
+          }
+        }
+      }
+    }
+  }
+}

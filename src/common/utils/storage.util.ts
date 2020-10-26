@@ -1,5 +1,8 @@
 export enum EStorageKey {
-  HistorySearch = 'HistorySearch'
+  HistorySearch = 'HistorySearch',
+  IsRememberMe = 'IsRememberMe',
+  LastUserPhone = 'LastUserPhone',
+  Authorization = 'Authorization'
 };
 
 export const local = {

@@ -4,7 +4,7 @@ import { Button, Input, Popover } from 'antd';
 import './index.scss';
 import { local, EStorageKey } from '@/common/utils/storage.util';
 import _ from 'lodash';
-import { connect } from 'dva';
+import { connect, useHistory } from 'dva';
 import { IGloablStore } from '@/common/interfaces/store.interface';
 
 const _navs = [
@@ -57,9 +57,9 @@ const Navigation: React.FC<any> = (props: any) => {
 
   const [keyword, setKeword] = useState<string>('');
   const [recentSearch, setRecentSearch] = useState<Array<string>>(local.get(EStorageKey.HistorySearch) || []);
-
+  const history = useHistory();
   const { isSubHeader, pId } = props;
-
+  
   const selectHistoryHandler = async (item: string) => {
     window.open(`/#/search?keyword=${item}`);
     setKeword(item);
@@ -162,8 +162,8 @@ const Navigation: React.FC<any> = (props: any) => {
           : (
           <div>
             <div className="bar-mine">
-              <div className="mine-item">登陆</div>
-              <div className="mine-item">注册</div>
+              <div onClick={() => history.push('/passport/login')} className="mine-item">登录</div>
+              <div onClick={() => history.push('/passport/register')} className="mine-item">注册</div>
                 <Button >投稿</Button>
             </div>
           </div>

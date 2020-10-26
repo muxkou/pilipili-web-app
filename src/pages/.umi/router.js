@@ -25,13 +25,6 @@ const routes = [
         _title_default: 'pili-web-app-umi',
       },
       {
-        path: '/passport',
-        exact: true,
-        component: require('../passport/index.tsx').default,
-        _title: 'pili-web-app-umi',
-        _title_default: 'pili-web-app-umi',
-      },
-      {
         path: '/passport/login',
         exact: true,
         component: require('../passport/login/index.tsx').default,

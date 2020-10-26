@@ -1,9 +1,10 @@
 import React from 'react';
 import './index.scss';
+import '../index.scss';
 import { Form, Input, Button, Select, message } from 'antd';
 // import { Rule } from 'antd/lib/form';
 import { exit, send, register } from '../../../services/user.service';
-import PasswordStrongValidation from '../../../components/PasswordStrongValidation/index';
+import PasswordStrongValidation from '../../../components/PasswordStrongValidation';
 import { isEmpty } from 'lodash';
 import { useHistory } from 'dva';
 
@@ -50,6 +51,7 @@ const Register: React.FC = props => {
         const { data } = await send(phone);
         if (data.encryptedCode) {
           setEncryptedCode(data.encryptedCode);
+          message.success('验证码发送成功');
         } else {
           throw new Error('获取encryptedCode失败 ');
         }
@@ -82,7 +84,7 @@ const Register: React.FC = props => {
 
   return (
     <div className="pili-register-wrapper">
-      <div className="title-line">
+      <div className="pili-passport-title-line">
         <span className="title">注册</span>
       </div>
       <div className="register-box">
